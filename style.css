@@ -36,8 +36,8 @@ html, body{
     height: 100%;
      background: radial-gradient(
         circle at 30% 0%,          /* center top */
-        rgba(0, 4, 248, 0.385) 10%, 
-        rgba(0, 4, 255, 0.16) 30%,
+        rgb(36, 207, 166,0.385) 0%, 
+        rgba(0, 0, 0, 0.16) 30%,
         transparent 80%
     ),
     #050505;   /* base dark background */
@@ -47,9 +47,9 @@ html, body{
     width: 100%;
     height: 100%;
      background: radial-gradient(
-        circle at 0% 90%,          /* center top */
-        rgba(0, 4, 248, 0.385) 10%, 
-        rgba(0, 4, 255, 0.16) 20%,
+        circle at 80% 60%,          /* center top */
+        rgb(36, 207, 166,0.09) 0%, 
+        rgba(0, 0, 0, 0.16) 20%,
         transparent 80%
     ),
     #050505;   /* base dark background */
@@ -58,7 +58,7 @@ html, body{
 #nav{
     display: flex;
     justify-content:space-between;
-    padding: 0px 100px;
+    padding: 0px 70px;
     
     background: rgba(0, 0, 0, 0);   /* हल्का transparent */
     backdrop-filter: blur(8px);      /* पीछे का कंटेंट blur */
@@ -92,18 +92,18 @@ html, body{
     font-size: 80px;
     text-align: center;
     font-family: Sher;
-    font-weight: 100;
+    font-weight:100;
 
     padding: 10px;
-    line-height: 0.8;
+    line-height: 0.9;
 }
 
 .btncourse{
-    background-color: #1d11ff;
+    background-color: #24cfa6;
     color: black;
     font-size: 20px;
     font-weight: 100;
-    padding: 15px 30px;
+    padding: 10px 30px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -172,11 +172,11 @@ p{
 }
 
 .htxt{
-    color: #080dff;
+    color: #24cfa6;
 }
 
 .htxt2{
-    color: #080dff;
-    font-size: 80px;
+    color: #24cfa6;
+    font-size: 70px;
     font-family: juana;
 }
