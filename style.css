@@ -96,6 +96,12 @@ body {
   padding: 10px;
   line-height: 0.845em;
 }
+#center .htxt {
+  color: #24cfa6;
+}
+#center .htxt2 {
+  font-family: juana;
+}
 
 .video-container {
   position: relative;
