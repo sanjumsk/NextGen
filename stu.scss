@@ -60,17 +60,30 @@ background-size: 100dvw;
     display: flex;
     justify-content:flex-start;
     flex-wrap: wrap;
+    // background-color: #fff;
 
     .card{
         width: 12rem;
         height: 17rem;
-        background:linear-gradient(#0631dc 10%, #ed05e5);
+        background: linear-gradient(
+                rgba(36, 207, 166,0.5),
+                rgba(0, 0, 0, 0.5)
+            );
         border-radius: 1rem;
         overflow: hidden;
-        border: 0.2rem solid blue;
+        border: 0.1rem solid rgb(26, 119, 97);
         margin: 0.5rem;
+        padding: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+
         img{
-            width: 100%;
+            width: 80%;
+            border-radius: 1rem;
+            border:0.1rem solid #f2ff02;
         }
 
         span{
@@ -83,7 +96,7 @@ background-size: 100dvw;
         h1{
             text-align: center;
             color: white;
-            font-size: 0.6rem;
+            font-size: 0.7rem;
             font-family: juana;
         }
     }
@@ -95,16 +108,31 @@ background-size: 100dvw;
         display: flex;
         justify-content:center;
         flex-wrap: wrap;
+        gap: 1rem;  
+
 
         .card{
         width: 80%;
         height: 26em;
-        background:linear-gradient(#0631dc 10%, #ed05e5);
         border-radius: 1rem;
         overflow: hidden;
-        border: 0.2rem solid blue;
+        border: 0.1rem solid rgb(26, 119, 97);
         margin: 0.5rem;
-    
+        gap: 1rem;
+
+          span{
+              font-size: 1.3rem;
+              font-family: Helvet-EB;
+              color: #f2ff02;
+              font-weight: 800;
+          }
+
+            h1{
+                text-align: center;
+                color: rgb(255, 255, 255);
+                font-size: 0.9rem;
+                font-family: juana;
+            }
         }
     }
 }
