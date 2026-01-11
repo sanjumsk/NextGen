@@ -61,5 +61,10 @@ BSignIn.addEventListener('click',()=>{
     window.open("sign.html")
 })
 
+//--------------------Goto home page---------------
 
+let BHome = document.getElementById("logo")
 
+BHome.addEventListener('click',()=>{
+    window.open("index.html")
+})

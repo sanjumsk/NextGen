@@ -1,3 +1,13 @@
+//Colors
+:root {
+  --pri: #24cfa6;
+  --sec: #171717;
+  --tri: #ffffff;
+  --text-color: #ffff;
+  --sec-text-color: #b9aaaa;
+
+}
+
 // Fonts
 @font-face {
     font-family: Sher;
@@ -54,21 +64,18 @@ background-size: 100dvw;
 }
 
 #center{
-    width: 100%;
-    height: auto;
-    padding: 1rem 1rem;
-    display: flex;
-    justify-content:flex-start;
-    flex-wrap: wrap;
-    margin-top: 5rem;
+    display: grid;
+    gap: 1.5rem;
+    row-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    padding: 5rem 2rem 1rem 2rem;
+    // padding: T R D L;
 
     .card{
-        width: 12rem;
-        height: 17rem;
-        background: linear-gradient(
-                rgba(36, 207, 166,0.5),
+      background: linear-gradient(
+        rgba(36, 207, 166,0.5),
                 rgba(0, 0, 0, 0.5)
-            );
+                );
         border-radius: 1rem;
         overflow: hidden;
         border: 0.1rem solid rgb(26, 119, 97);
@@ -79,6 +86,11 @@ background-size: 100dvw;
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
+        aspect-ratio: 1/1.3;
+
+        @media(max-width: 768px){
+          gap: 1rem;
+        }
 
         img{
             width: 80%;
@@ -93,158 +105,136 @@ background-size: 100dvw;
             font-weight: 800;
         }
 
-        h1{
-            text-align: center;
-            color: white;
-            font-size: 0.7rem;
-            font-family: NeueM;
-        }
-    }
+        h1 {
+          text-align: center;
+          color: white;
+          font-size: 0.8rem;
+          font-family: Helvet-R;
+          letter-spacing: 1.5px;
 
-    @media(max-width: 768px){
-        justify-content:center;
-        flex-wrap: wrap;
-        gap: 1rem;  
-
-
-        .card{
-        width: 80%;
-        height: 26em;
-        gap: 1rem;
-
-          span{
-              font-size: 1.3rem;
-              font-weight: 800;
+          @media(max-width: 768px) {
+            font-size: 1rem;
           }
-
-            h1{
-                text-align: center;
-                font-size: 0.9rem;
-            }
         }
     }
+
 }
 
 
 // NAV BAR
-  #nav {
+#nav {
+  // width: 100%;
+  width: clamp(20rem,94vw,160rem);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 111;
+  // isolation: isolate;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 1rem;
+
+  color: var(--tri);
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+
+  img {
+    width: 5em;
+    margin: 20px 10px;
+  }
+
+  h3 {
+    font-size: 1em;
+    font-family: sher;
+    font-weight: 100;
+  }
+
+  button {
+    height: 2.5em;
+    background-color: var(--pri);
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0em 2em;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+  }
+
+  #logo {
     display: flex;
-    justify-content: space-between;
-    padding: 3rem 4rem;
-    background: rgba(0, 0, 0, 0);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(10px);
-    
-    width: 100%;
-    max-height: 1rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    
-    img {
-      width: 5em;
-      margin: 20px 10px;
-    }
-    
-    h3 {
-      color: #f2f2f2;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  // TABS AREA
+  #tabs {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    font-family: Helvet-L;
+
+    .heading {
+      color: rgb(255, 255, 255);
+      text-align: center;
       font-size: 1em;
-      font-family: Sher;
-      font-weight: 100;
+      text-decoration: none;
     }
-  
-    button {
-      height: 2.5em;
-      background-color: #24cfa6;
-      color: white;
-      font-size: 0.8em;
-      font-weight: 400;
-      padding: 0em 2em;
-      border: none;
-      border-radius: 0.3em;
-      cursor: pointer;
-    }
-  
-    #logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-      // TABS AREA
-    #tabs {
-      display: flex;
-      align-items: center;
-      gap: 5rem;
-      font-family: Helvet-L; 
-      
-      .heading {
-        color: rgb(255, 255, 255);
-        text-align: center;
-        font-size: 1em;
-        text-decoration: none;
-      }   
-      
-  }
-
-    @media(max-width: 768px) {
-    display: flex;
-    justify-content: space-between;
-    padding: 3em 1.5em;
-    background: rgba(0, 0, 0, 0);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(10px);
-  
-    width: 100%;
-    max-height: 0.5rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-
-    img {
-      width: 3em;
-      // background-color: #fff;
-    }
-    
-    h3 {
-      color: #f2f2f2;
-      font-size: 0.7em;
-      font-family: sher;
-      font-weight: 100;
-    }
-    
-    button {
-      height: 2.5em;
-      background-color: #24cfa6;
-      color: white;
-      font-size: 0.8em;
-      font-weight: 400;
-      padding: 0em 1em;
-      border: none;
-      border-radius: 0.3em;
-      cursor: pointer;
-    }
-    
-    #logo {
-      display: flex;
-      align-items: center;
-    }
-
-    // TABS AREA
-    #tabs {
-      display: flex;
-      justify-content: center;
-
-      
-      .heading {
-        display: none;
-      }   
 
   }
 
+        @media(max-width: 768px) {
+          
     
-  }
+          img {
+            width: 3em;
+            // background-color: #fff;
+          }
+    
+          h3 {
+            color: #f2f2f2;
+            font-size: 0.7em;
+            font-family: sher;
+            font-weight: 100;
+          }
+    
+          button {
+            height: 2.5em;
+            background-color: #24cfa6;
+            color: white;
+            font-size: 0.8em;
+            font-weight: 400;
+            padding: 0em 1em;
+            border: none;
+            border-radius: 0.3em;
+            cursor: pointer;
+          }
+    
+          #logo {
+            display: flex;
+            align-items: center;
+          }
+    
+          // TABS AREA
+          #tabs {
+            display: flex;
+            justify-content: center;
+    
+    
+            .heading {
+              display: none;
+            }
+    
+          }
+    
+    
+        }
 }
+
   
