@@ -42,40 +42,40 @@ function CourseCard(){
             Course:"Tally ( Latest tally prime )",
             Batch_type:"OFFLINE",
             language:"HINGLISH",
-            Fee:"5999",
+            Fee:"7999",
             Discount:50,
             Discount_till:"Limited Time Discount"
         },
         {
             Pic:"ccc.png",
-            Course:"Tally ( Latest tally prime )",
+            Course:"ADCA ( Advanced Diploma in Compurter Application )",
             Batch_type:"OFFLINE",
             language:"HINGLISH",
-            Fee:"5999",
+            Fee:"15999",
             Discount:50,
             Discount_till:"Limited Time Discount"
         },
         {
             Pic:"ccc.png",
-            Course:"Tally ( Latest tally prime )",
+            Course:"PGDCA ( Post Graduate Diploma in Computer Application )",
             Batch_type:"OFFLINE",
             language:"HINGLISH",
-            Fee:"5999",
+            Fee:"16999",
             Discount:50,
             Discount_till:"Limited Time Discount"
         },
         {
             Pic:"ccc.png",
-            Course:"Tally ( Latest tally prime )",
+            Course:"Microsoft Excel ( Basic )",
             Batch_type:"OFFLINE",
             language:"HINGLISH",
-            Fee:"5999",
+            Fee:"3999",
             Discount:50,
             Discount_till:"Limited Time Discount"
         },
         {
             Pic:"ccc.png",
-            Course:"Tally ( Latest tally prime )",
+            Course:"Microsoft Excel ( Advance )",
             Batch_type:"OFFLINE",
             language:"HINGLISH",
             Fee:"5999",
