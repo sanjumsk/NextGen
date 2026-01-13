@@ -115,7 +115,7 @@ formSubmit();
 // Show hours label and input box
 let plansArray = [];
 
-localStorage.getItem('plansArray')? plansArray = JSON.parse(localStorage.getItem('plansArray')):{};
+localStorage.getItem('plansArray')? plansArray = JSON.parse(localStorage.getItem('plansArray')):[];
 console.log(plansArray);
 
 
@@ -130,7 +130,7 @@ hour.forEach((elem,index)=>{
     // console.log(`${6+elem}:00-${7+elem}:00`);
     Plans= Plans + `<div class="planner-time">
                             <h2>${6+elem}:00 - ${7+elem}:00</h2>
-                            <input id="${index}" placeholder="..." class="plan-input" value = ${plansArray[index]}></input>
+                            <input id="${index}" placeholder="..." class="plan-input" value = ${localStorage.getItem('plansArray')? plansArray[index]:''}></input>
                     </div>`
 });
 
