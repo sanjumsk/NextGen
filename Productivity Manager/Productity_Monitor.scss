@@ -8,6 +8,7 @@
 }
 
 
+// Fonts
 @font-face {
     font-family: aeonik;
     font-weight: 200;
@@ -23,6 +24,38 @@
     font-family: aeonik;
     font-weight: 700;
     src: url(Fonts/AeonikTRIAL-Bold.otf);
+}
+
+@font-face {
+  font-family: Sher;
+  src: url("../Fonts/NeueMachina-Light_gwWCZxVuQl.ttf");
+}
+
+@font-face {
+  font-family: juana;
+  src: url("../Fonts/Fontspring-DEMO-juana-extralightit_toKzXEsfr (1).ttf");
+}
+
+@font-face {
+  font-family: Helvet-EB;
+  src: url("../Fonts/HelveticaNowDisplay-ExtraBold_Qqt_sGOvuc_Z0ZOJEQucI.woff2");
+}
+
+
+@font-face {
+  font-family: Helvet-R;
+  src: url("../Fonts/HelveticaNowDisplay-Regular_5Mzhp8KlA8_CAVTbnsPOM.woff2");
+}
+
+@font-face {
+  font-family: Helvet-M;
+  src: url("../Fonts/HelveticaNowDisplay-Medium_2wEhlmo-TD_wsqqEEwmJC.woff2");
+}
+
+
+@font-face {
+  font-family: Helvet-L;
+  src: url("../Fonts/HelveticaNowDisplay-Light_M4nzWhve6k_k7HolyzL10.woff2");
 }
 
 
@@ -42,7 +75,7 @@ html,body{
     width: 100%;
     height: 100%;
     color: var(--pri);
-    
+
 }
 
 nav{
@@ -52,24 +85,46 @@ nav{
     padding: 1rem;
     position: relative;
 
-    .Home{
-        background-color:var(--tri1);
-        width: 5rem;
-        
+    a{
+        text-decoration: none;
+        .Home{
+            background-color:var(--tri1);
+            width: 5rem;
+            border-radius: 1rem;
+            padding: 0.2rem 0.3rem;
+            text-align: center;
+            font-family: Helvet-R;
+            font-weight: 600;
+            color: var(--sec);
+
+            transition: border 0.1s ease, box-shadow 0.5s ease;
+
+        }
+
+        .Home:hover{
+            border: 0.5px solid var(--sec);
+            box-shadow: 0 0 8px;
+        }
     }
 }
 
-section.Allelem{
-    
-    display: flex;
+.Allelem{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
     flex-wrap: wrap;
     padding: 2rem;
     gap: 2rem;
+    row-gap: 2rem;
+    // background-color: #fff;
+
+    
 
     .elem{
-        width: 19rem;
-        height: 25rem;
-
+        width: 100%;
+        // height: 25rem;
+        aspect-ratio: 1/1.2;
+        // background-color: red;
         background-color:var(--tri1);
         border-radius: 1rem;
         margin-top:1rem;
@@ -159,14 +214,19 @@ section.Allelem{
 
 
         .task-container{
-            height: 80%;
             display: flex;
-            justify-content: space-between;
+            gap: 2rem;
+            justify-content: space-evenly;
             margin-top: 2rem;
+            
+            @media(max-width:768px){
+                flex-wrap: wrap;
+            }
             
 
             .addtask{
-                width: 33%;
+                width: clamp(23rem,33%,30rem);
+                // width: 33%;
                 background-color: var(--sec2);
                 color: var(--sec);
                 padding: 1.5rem;
@@ -175,7 +235,7 @@ section.Allelem{
 
 
                 form{
-                    height: 100%;
+                    // height: 100%;
                     display: flex;
                     flex-direction: column;
                     gap: 1.5rem;
@@ -237,48 +297,82 @@ section.Allelem{
             }
 
             .alltask{
-                width: 65%;
+                // width: 65%;
+                width: clamp(23rem,65%,130rem);
+                min-height: 42rem;
                 background-color:var(--sec2);
                 border-radius: 1rem;
                 padding: 2rem;
                 overflow: auto;
 
-                .task{
-                    background-color: var(--pri2);
-                    border-radius: 0.5rem;
-                    padding: 0.8rem 2rem;
-                    display: flex;
-                    justify-content: space-between;
-                    margin-bottom: 1.5rem;
+                @media(max-width:768px){
+                    padding: 1.4rem;
+                }
 
+                .task-box{
+                    padding: 0.5rem 2rem;
+                    font-size: 1rem;
+                    background-color:var(--pri2);
+                    position: relative;
+                    color: var(--sec);
+                    border-radius: 1rem;
+                    margin-bottom: 1rem;
 
-                    h1{
-                        font-size: 1.5rem;
-                        font-weight: 700;
-                        color: var(--sec);
-                    }
+                    
+                    @media(max-width:768px){
+                            border-radius: 0.4rem;
+                            padding: 0.5rem 1rem;
+                        }
 
-                    h1 span{
-                        background-color:red;
-                        border-radius: 1rem;
-                        font-size: 1rem;
-                        padding: 0.1rem 0.5rem;
-                    }
-
-                    h1 span.true{
-                        opacity: 1;
-                    }
-
-                    h1 span.false{
-                        opacity: 0;
-                    }
-
-                    button{
-                        background-color: green;
-                        color: white;
-                        padding: 0.5rem 1rem;
-                        border: none;
-                        border-radius: 0.5rem;
+                    summary{
+                        // background-color: var(--pri2);
+                        // border-radius: 0.5rem;
+                        padding: 0.8rem 0.1rem;
+                        display: flex;
+                        justify-content: space-between;
+                        
+                        @media(max-width:768px){
+                                padding: 0.3rem 0.1rem;
+                            }
+    
+                        h1{
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                            color: var(--sec);
+    
+                            @media(max-width:768px){
+                                font-size: 1.2rem;
+                            }
+                        }
+    
+                        h1 span{
+                            background-color:red;
+                            border-radius: 1rem;
+                            font-size: 1rem;
+                            padding: 0.1rem 0.5rem;
+                        }
+    
+                        h1 span.true{
+                            opacity: 1;
+                        }
+    
+                        h1 span.false{
+                            opacity: 0;
+                        }
+    
+                        button{
+                            background-color: green;
+                            color: white;
+                            padding: 0.5rem 1rem;
+                            border: none;
+                            border-radius: 0.5rem;
+    
+                            @media(max-width:768px){
+                                padding: 0.3rem 0.3rem;
+                                font-size: 0.8rem;
+                                border-radius: 0.3rem;
+                            }
+                        }
                     }
                 }
             }

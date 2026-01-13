@@ -22,6 +22,30 @@
   font-weight: 700;
   src: url(Fonts/AeonikTRIAL-Bold.otf);
 }
+@font-face {
+  font-family: Sher;
+  src: url("../Fonts/NeueMachina-Light_gwWCZxVuQl.ttf");
+}
+@font-face {
+  font-family: juana;
+  src: url("../Fonts/Fontspring-DEMO-juana-extralightit_toKzXEsfr (1).ttf");
+}
+@font-face {
+  font-family: Helvet-EB;
+  src: url("../Fonts/HelveticaNowDisplay-ExtraBold_Qqt_sGOvuc_Z0ZOJEQucI.woff2");
+}
+@font-face {
+  font-family: Helvet-R;
+  src: url("../Fonts/HelveticaNowDisplay-Regular_5Mzhp8KlA8_CAVTbnsPOM.woff2");
+}
+@font-face {
+  font-family: Helvet-M;
+  src: url("../Fonts/HelveticaNowDisplay-Medium_2wEhlmo-TD_wsqqEEwmJC.woff2");
+}
+@font-face {
+  font-family: Helvet-L;
+  src: url("../Fonts/HelveticaNowDisplay-Light_M4nzWhve6k_k7HolyzL10.woff2");
+}
 * {
   margin: 0;
   padding: 0;
@@ -47,20 +71,37 @@ nav {
   padding: 1rem;
   position: relative;
 }
-nav .Home {
+nav a {
+  text-decoration: none;
+}
+nav a .Home {
   background-color: var(--tri1);
   width: 5rem;
+  border-radius: 1rem;
+  padding: 0.2rem 0.3rem;
+  text-align: center;
+  font-family: Helvet-R;
+  font-weight: 600;
+  color: var(--sec);
+  transition: border 0.1s ease, box-shadow 0.5s ease;
+}
+nav a .Home:hover {
+  border: 0.5px solid var(--sec);
+  box-shadow: 0 0 8px;
 }
 
-section.Allelem {
-  display: flex;
+.Allelem {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   flex-wrap: wrap;
   padding: 2rem;
   gap: 2rem;
+  row-gap: 2rem;
 }
-section.Allelem .elem {
-  width: 19rem;
-  height: 25rem;
+.Allelem .elem {
+  width: 100%;
+  aspect-ratio: 1/1.2;
   background-color: var(--tri1);
   border-radius: 1rem;
   margin-top: 1rem;
@@ -71,16 +112,16 @@ section.Allelem .elem {
   transition: scale 0.3s ease;
   position: relative;
 }
-section.Allelem .elem img {
+.Allelem .elem img {
   height: 100%;
   width: 100%;
 }
-section.Allelem .elem p {
+.Allelem .elem p {
   position: absolute;
   bottom: 5%;
   right: 5%;
 }
-section.Allelem .elem:hover {
+.Allelem .elem:hover {
   scale: 0.97;
 }
 
@@ -122,20 +163,24 @@ section.Allelem .elem:hover {
   font-size: 3rem;
 }
 #pages .todo-list-fullpage .task-container {
-  height: 80%;
   display: flex;
-  justify-content: space-between;
+  gap: 2rem;
+  justify-content: space-evenly;
   margin-top: 2rem;
 }
+@media (max-width: 768px) {
+  #pages .todo-list-fullpage .task-container {
+    flex-wrap: wrap;
+  }
+}
 #pages .todo-list-fullpage .task-container .addtask {
-  width: 33%;
+  width: clamp(23rem, 33%, 30rem);
   background-color: var(--sec2);
   color: var(--sec);
   padding: 1.5rem;
   border-radius: 1rem;
 }
 #pages .todo-list-fullpage .task-container .addtask form {
-  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -182,43 +227,78 @@ section.Allelem .elem:hover {
   cursor: pointer;
 }
 #pages .todo-list-fullpage .task-container .alltask {
-  width: 65%;
+  width: clamp(23rem, 65%, 130rem);
+  min-height: 42rem;
   background-color: var(--sec2);
   border-radius: 1rem;
   padding: 2rem;
   overflow: auto;
 }
-#pages .todo-list-fullpage .task-container .alltask .task {
+@media (max-width: 768px) {
+  #pages .todo-list-fullpage .task-container .alltask {
+    padding: 1.4rem;
+  }
+}
+#pages .todo-list-fullpage .task-container .alltask .task-box {
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
   background-color: var(--pri2);
-  border-radius: 0.5rem;
-  padding: 0.8rem 2rem;
+  position: relative;
+  color: var(--sec);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  #pages .todo-list-fullpage .task-container .alltask .task-box {
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+  }
+}
+#pages .todo-list-fullpage .task-container .alltask .task-box summary {
+  padding: 0.8rem 0.1rem;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
 }
-#pages .todo-list-fullpage .task-container .alltask .task h1 {
+@media (max-width: 768px) {
+  #pages .todo-list-fullpage .task-container .alltask .task-box summary {
+    padding: 0.3rem 0.1rem;
+  }
+}
+#pages .todo-list-fullpage .task-container .alltask .task-box summary h1 {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--sec);
 }
-#pages .todo-list-fullpage .task-container .alltask .task h1 span {
+@media (max-width: 768px) {
+  #pages .todo-list-fullpage .task-container .alltask .task-box summary h1 {
+    font-size: 1.2rem;
+  }
+}
+#pages .todo-list-fullpage .task-container .alltask .task-box summary h1 span {
   background-color: red;
   border-radius: 1rem;
   font-size: 1rem;
   padding: 0.1rem 0.5rem;
 }
-#pages .todo-list-fullpage .task-container .alltask .task h1 span.true {
+#pages .todo-list-fullpage .task-container .alltask .task-box summary h1 span.true {
   opacity: 1;
 }
-#pages .todo-list-fullpage .task-container .alltask .task h1 span.false {
+#pages .todo-list-fullpage .task-container .alltask .task-box summary h1 span.false {
   opacity: 0;
 }
-#pages .todo-list-fullpage .task-container .alltask .task button {
+#pages .todo-list-fullpage .task-container .alltask .task-box summary button {
   background-color: green;
   color: white;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.5rem;
+}
+@media (max-width: 768px) {
+  #pages .todo-list-fullpage .task-container .alltask .task-box summary button {
+    padding: 0.3rem 0.3rem;
+    font-size: 0.8rem;
+    border-radius: 0.3rem;
+  }
 }
 #pages .daily-planner-fullpage h1 {
   font-size: 3rem;

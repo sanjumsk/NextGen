@@ -54,10 +54,15 @@ function RenderTask(){
 
     let sum = '';
     currentTask.forEach((elem,index)=>{
-    sum= sum +  `<div class="task">
-                        <h1>${elem.task} <span class=${elem.imp}>imp</span> </h1>
-                        <button id=${index}>Mark as Completed</button>
-                    </div>`
+    sum= sum +  `<details class="task-box" role="listitem">
+                    <summary >
+                            <h1>${elem.task} <span class=${elem.imp}>imp</span> </h1>
+                            <button id=${index}>Mark as Completed</button>
+                    </summary>
+                    <div class="task-details">
+                       <p>${elem.detail}</p>
+                    </div>
+                </details>`
     });
     allTask.innerHTML = sum;
     MarkBtnClick();
@@ -68,7 +73,7 @@ RenderTask();
 
 //-----------------Mark as complete Btn ka click event-------------
 function MarkBtnClick(){
-    let Markbutton = document.querySelectorAll('.task button')
+    let Markbutton = document.querySelectorAll('.task-box button')
 
     Markbutton.forEach((button)=>{
         button.addEventListener('click',function(){
@@ -130,7 +135,7 @@ hour.forEach((elem,index)=>{
     // console.log(`${6+elem}:00-${7+elem}:00`);
     Plans= Plans + `<div class="planner-time">
                             <h2>${6+elem}:00 - ${7+elem}:00</h2>
-                            <input id="${index}" placeholder="..." class="plan-input" value = ${localStorage.getItem('plansArray')? plansArray[index]:''}></input>
+                            <input id="${index}" placeholder="..." class="plan-input" value = ${plansArray[index] != undefined ? plansArray[index]:''}></input>
                     </div>`
 });
 

@@ -413,23 +413,51 @@ body {
 
 #view5 {
   height: 100vh;
-  padding: 2rem 2rem;
-  background-color: #fff;
+  padding: 2rem 1rem;
   width: clamp(20rem, 94vw, 160rem);
   position: relative;
   left: 50%;
   transform: translate(-50%);
-  font-family: Helvet-L;
+  font-family: Sher;
+}
+#view5 .top {
+  margin: 1rem 0rem;
+}
+#view5 .top h1 {
+  color: var(--text-color);
+  font-weight: 100;
 }
 #view5 .bottom {
-  background-color: #f23;
-  padding: 1rem;
+  padding: 1rem 0rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
   gap: 2rem;
   row-gap: 2rem;
 }
 #view5 .bottom .service {
-  background-color: var(--pri);
-  height: 5rem;
+  position: relative;
+  transition: scale 0.2s ease, box-shadow 0.5s ease;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+#view5 .bottom .service a {
+  text-decoration: none;
+}
+#view5 .bottom .service a img {
+  width: 100%;
+}
+#view5 .bottom .service a p {
+  text-align: center;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.165), rgba(0, 0, 0, 0.965));
+  padding: 1rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+#view5 .bottom .service:hover {
+  scale: 0.95;
+  box-shadow: 0 0 20px 1px var(--pri);
 }/*# sourceMappingURL=style.css.map */
