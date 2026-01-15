@@ -453,6 +453,11 @@ nav a .Home:hover {
   font-size: 2.2rem;
   color: var(--sec);
 }
+@media (max-width: 768px) {
+  #pages .motivation-fullpage .motivation-main .quote-card p {
+    font-size: 1.8rem;
+  }
+}
 #pages .motivation-fullpage .motivation-main .quote-card .quote {
   position: absolute;
   font-size: 10rem;

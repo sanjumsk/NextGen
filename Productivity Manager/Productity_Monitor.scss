@@ -566,6 +566,10 @@ nav{
                         text-align: center;
                         font-size: 2.2rem;
                         color: var(--sec);
+
+                        @media(max-width:768px) {
+                        font-size: 1.8rem;
+                        }
                     }
             
                     /* Quotes */
