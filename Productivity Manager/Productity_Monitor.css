@@ -348,7 +348,6 @@ nav a .Home:hover {
   border: 1px solid var(--tri2);
 }
 #pages .motivation-fullpage {
-  display: block;
   height: 100%;
   padding: 2rem;
 }
