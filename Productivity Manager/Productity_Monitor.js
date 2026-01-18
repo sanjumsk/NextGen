@@ -173,8 +173,8 @@ async function GetQuote_Date_time(){
 
     
     let d = new Date();
-    let day = d.toLocaleDateString("en-US", { weekday: "short" });
-    let month = d.toLocaleDateString("en-US", { month: "long" });
+    let day = d.toLocaleDateString("hi-IN", { weekday: "long" });
+    let month = d.toLocaleDateString("hi-IN", { month: "long" });
     let year = d.getFullYear();
     
     
@@ -329,6 +329,15 @@ function ButtonsClickEvent(){
 }
 ButtonsClickEvent();
 
+let apikey = '603884cbd9674e5186a163149261601'
+let city = 'Rath'
+
+async function weatherData() {
+    let response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}`);
+    let data = await response.json();
+    console.log(data.current.temp_c)
+}
+weatherData();
 
 
 
